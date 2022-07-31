@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Panayot's website</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="Content/index.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+<link rel="icon" 
+      type="image/jpg" 
+      href="more\images\upper-logo.jpg" />
+<link rel="shortcut icon" type="image/ico" href="more\images\favicon.ico"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="more/indes.js"></script>
+</head>
+<body>
+    <header>
+        <h1>PANAYOT</h1>
+    </header>
+    <nav>   
+        <ul class = "topnav" id = "myTopnav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="downloads.html">Download</a></li>
+            <li><a href="index.html">Autobiography</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="TheForum/Index">Forum</a></li>
+        </ul>
+        <a class="icon" onclick="myFunction()">&#9776;</a>
+    </nav>
+    
+    <main>
+        <section id = "intro">
+            <div class = "container">
+                <img src="more\images\PAN.jpg" alt="Picture of me" id = "main-img" class = "myImage">
+                <div class = "description">
+                    <p>Казвам се Панайот, родом от град Казанлък съм, известен още като 'града на розите'. Завършил съм местната хуманитарна гимназия, след това
+                        реших да замина да уча Икономика в Тилбургския университет в Холандия, но нещата не се развиха по най-добрия начин и реших да се завърна в България. 
+                        В програмата ми по Икономика имаше и курс по Пайтън, и от там се запалих по пгорамирането, затова в България без да се замисля записах Информационни
+                        Технологии в Нов Български университет. (Нарочно така е написано, не съм филмар :D)
+                    </p>               
+                </div>
+            </div>        
+        </section>
+        <section id = "middle">
+            <h2 class = "ok">Projects</h2>
+            <div class = projects>
+                
+                <div>
+                    <a href = "https://github.com/hzd1719/DamyanovHouse"target="_blank"><img src="more\images\MainImage1.jpg" alt="Project 1 image" id = "imgProject1">
+                        <h3 id = "project_one" class = "projectTitles">Web development</h3>
+                    </a>
+                    <p>
+                        Damyanov House - първият ми сайт, който направих. Сайтът е за местна къща за гости,
+                        има кратка информация за къщата и града, както и галерия от снимки. Все още не е напълно довършен,
+                        има какво да се прави като фронт енд, но искам да направя и бак енда за резервациите. 
+                        <a><br><span>Show more...</span></a>
+                    </p>
+                </div>
+                <div>
+                    <a href = "https://github.com/hzd1719/FourMiniGames"target="_blank"><img src="more\images\MainImage2.jpg" alt="Project 2 image" id = "imgProject2">
+                        <h3 id = "project_two" class = "projectTitles">Mini Games</h3>
+                    </a>
+                    <p>
+                        Сега може да играете любимите си мини игри от детството - Понг гейм, Бесеница, Змията и Събиране на ябълки.
+                        Въпреки че в момента има нови и доста по-реалистични и вълнуващи игри, никой не отказва да разпусне на игри, които му носят спомени.
+                        Има база за подобрение и в игрите, но най-лесното подобрение, което мога да напрвя е да ги направя в exe файл, за да се играят
+                        без python.
+                        <a><br><span>Show more...</span></a>                       
+                    </p>
+                </div>
+                <div>
+                    <a target="_blank"><img src="more\images\MainImage3.jpg" alt="Project 3 image" id = "imgProject3">
+                        <h3 id = "project_three" class = "projectTitles">Landscape with Unreal</h3>
+                    </a>
+                    <p>
+                        Най-скорошният ми проект, тук може да се потопите в красива гледка направена с Unreal Engine.
+                        Това е подготовка за игра. Това ще ми е пистата, имам нещо на ум какво мога да направя с това.
+                        <a><br><span>Show more...</span></a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <script>
+            //when nav is clicked, make navbar apper and move the home page image
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                var y = document.getElementById("main-img");
+            
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                    y.className += " move"
+            
+            }  else {
+                    x.className = "topnav";
+                    y.className = "myImage"
+            }
+          }
+        </script>
+    </main>
+    <footer>
+        
+        <div class = "socialMedia"> 
+            <a href="https://www.facebook.com/panaiot.kostov.7"target="_blank"><img src = "more\images\fb_logo.svg" alt="Facebook logo" width="30px"></a>
+            <a href="https://www.instagram.com/panayot.kostov "target="_blank"><img src = "more\images\insta_logo.svg" alt="Instagram logo" width="30px"></a>
+            <a href="https://github.com/hzd1719"target="_blank"><img src = "more\images\github_logo.svg" alt="Github logo" width="30px"></a>
+        </div>
+        <p>@2022 Panayot Kostov</p>
+    </footer>
+</body>
+</html>

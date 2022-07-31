@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Forum</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="Content/index.css">
+<script type="text/javascript" src="indes.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+<link rel="icon" 
+      type="image/jpg" 
+      href="more\images\upper-logo.jpg" />
+<link rel="shortcut icon" type="image/ico" href="more\images\favicon.ico"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>PANAYOT</h1>
+    </header>
+    <nav>   
+        <ul class = "topnav" id = "myTopnav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="downloads.html">Download</a></li>
+            <li><a href="index.html">Autobiography</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="forum.html">Forum</a></li>
+        </ul>
+        <a class="icon" onclick="myFunction()">&#9776;</a>
+    </nav>
+    <main>
+        <form action="action_page.php">
+            <div>
+              <h3>Register</h3>
+              <p>Please fill in this form to create an account.</p>
+              <hr>
+          
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" id="email" required>
+          
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+          
+              <label for="psw-repeat"><b>Repeat Password</b></label>
+              <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+              <hr>
+          
+              <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+              <button type="submit" class="registerbtn">Register</button>
+            </div>
+          
+            <div>
+              <p>Already have an account? <a href="#">Sign in</a>.</p>
+            </div>
+          </form>
+    </main>
+<footer>
+    <div class = "socialMedia"> 
+        <a href="https://www.facebook.com/panaiot.kostov.7"target="_blank"><img src = "more\images\fb_logo.svg" alt="Facebook logo" width="30px"></a>
+        <a href="https://www.instagram.com/panayot.kostov "target="_blank"><img src = "more\images\insta_logo.svg" alt="Instagram logo" width="30px"></a>
+        <a href="https://github.com/hzd1719"target="_blank"><img src = "more\images\github_logo.svg" alt="Github logo" width="30px"></a>
+    </div>
+    <p>@2022 Panayot Kostov</p>
+</footer>
+</body>
+</html>
