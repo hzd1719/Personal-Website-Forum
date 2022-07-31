@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "List";
+}
+<head>
+    <title>Forum</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="indes.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+    <link rel="icon"
+          type="image/jpg"
+          href="more\images\upper-logo.jpg" />
+    <link rel="shortcut icon" type="image/ico" href="more\images\favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<header>
+    <h1>PANAYOT</h1>
+</header>
+<nav>
+    <ul class="topnav" id="myTopnav">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/downloads.html">Download</a></li>
+        <li><a href="/index.html">Autobiography</a></li>
+        <li><a href="/gallery.html">Gallery</a></li>
+        <li><a href="#" onClick="window.location.reload();return false;">Forum</a></li>
+        @if (Request.IsAuthenticated)
+        {
+            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+            {
+                @Html.AntiForgeryToken()
+                <li><a>@Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</a></li>
+            }
+        }
+    </ul>
+    <a class="icon" onclick="myFunction()">&#9776;</a>
+</nav>
+
+
+
+
+<div class="space-left">
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="button-container">
+               
+                <!--klombaHtml.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })-->
+                <button class="login" href="javascript:document.getElementById('logoutForm').submit()">Log off</button>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="button-container">
+            <button class="login" onclick="location.href='/Account/Login'">Login</button>
+            <button class="login" id="register-button" onclick="location.href='/Account/Register'">Register</button>
+        </div>
+    }
+    <p class="h2-header">Comment Section</p>
+    <div class="space-bottom">
+        <p>
+            @{int counter = 0; int j = 0; int k = 0;}
+            @foreach (var entry in ViewBag.Entries)
+            {
+                k++;
+            }
+            @foreach (var entry in ViewBag.Entries)
+            {
+
+                if (User.Identity.Name == entry.Name)
+                {
+                    counter = j;
+                }
+                j++;
+            }
+            @{k = k - counter; }
+            <!--klombaif (Request.IsAuthenticated)-->
+            @if (counter > 0)
+            {
+
+                <a id="add_comment" href="/TheForum/Show/@k">>Edit a comment</a> <br />
+
+
+
+            }
+            <a id="add_comment" href="/TheForum/Create">>Add a comment</a> <br/>
+            <a id="add_comment" href="/TheForum/CommentSummary">>Most active users</a>
+        </p>
+    </div>
+
+    @foreach (var entry in ViewBag.Entries)
+    {
+        <section class="contact">
+            <header>
+                <h4>@entry.Message</h4>
+            </header>
+            <p class="posted">
+                Posted by @entry.Name on @entry.DateAdded.ToLongDateString()
+            </p>
+        </section>
+    }
+</div>
+<footer>
+    <div class="socialMedia">
+        <a href="https://www.facebook.com/panaiot.kostov.7" target="_blank"><img src="\more\images\fb_logo.svg" alt="Facebook logo" width="30px"></a>
+        <a href="https://www.instagram.com/panayot.kostov " target="_blank"><img src="\more\images\insta_logo.svg" alt="Instagram logo" width="30px"></a>
+        <a href="https://github.com/hzd1719" target="_blank"><img src="\more\images\github_logo.svg" alt="Github logo" width="30px"></a>
+    </div>
+    <p>2022 Panayot Kostov</p>
+</footer>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        var y = document.getElementById("main-img");
+
+        if (x.className === "topnav") {
+            x.className += " responsive";
+            y.className += " move"
+
+        } else {
+            x.className = "topnav";
+            y.className = "myImage"
+        }
+    }
+</script>
+

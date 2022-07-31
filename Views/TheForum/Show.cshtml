@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Edit options";
+}
+
+
+<p>
+    <h2>
+        Comment
+    </h2>
+    <dl>
+        <p>@Model.Name</p>
+        <p>Date Added: @Model.DateAdded</p>
+        <p>Message: <br /> @Model.Message</p>
+       
+    </dl>
+    
+</p>
+
+<p>
+    @{
+        bool hasPermission =
+        (bool)ViewData["hasPermission"];
+    }
+    @if (hasPermission)
+    {
+        
+        <a>@Html.ActionLink("Edit", "Edit", new { id = Model.Id })</a>
+        <br />
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+        <br />
+        @Html.ActionLink("Back to Comments", "Index")
+    }
+
+</p>
+

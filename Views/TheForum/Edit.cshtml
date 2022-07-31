@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<form method="post" action="">
+    <fieldset>
+        <!-- <input type="text" name="Name" maxlength="200" value="klombaModel.Name" /> -->
+        <dl>
+            <p>@Model.Name</p>
+            <p>Date Added: @Model.DateAdded</p>
+            
+        </dl>
+        
+              <p>Please edit your message: </p>
+        <textarea name="Message" rows="15" cols="60">@Model.Message</textarea>
+        <br /><br />
+        <input type="submit" value="Edit Entry" />
+    </fieldset>
+</form>
